@@ -1,27 +1,33 @@
-# 🤖 AI-Powered Brawl Stars Draft Guide
+# Professional-Grade Brawl Stars Draft Guide
 
-A data-driven web application that provides real-time drafting strategies for Brawl Stars. This tool utilizes **Google's Gemini 2.0 Flash-Lite AI** to generate context-aware strategy descriptions for every Brawler based on map, mode, and pick order.
+- A data-driven web application that utilizes guides and analysis from professional Brawl Stars players (not just average win rates) to provide drafting advice for ranked matches in Brawl Stars.
+- This tool provides recommendations based on map, mode, and pick to the player and utilizes Google's Gemini API to generate context-aware descriptions for the reasoning behind each recommendation.
 
-## 🚀 Features
+## Features
 * **Dynamic Drafting Engine:** Filters 80+ Brawlers based on current meta maps and modes.
-* **AI-Generated Strategy:** Uses Large Language Models (LLMs) to generate specific advice (e.g., "Why is Gus good on Shooting Star?").
-* **Fault-Tolerant Data Pipeline:** Custom Python scripts manage API rate limits and data normalization.
-* **Interactive UI:** Built with Streamlit for a responsive, low-latency user experience.
+* **AI-Powered Strategy Description:** Uses Gemini to generate specific advice (e.g., "Why is Gus good on Shooting Star?").
+* **Fallback-Ensured Data Pipeline:** Custom Python scripts deal with API rate limits and normalize data as needed.
+* **Interactive UI:** Built with Streamlit for a responsive, low-latency UI/UX.
 
-## 🛠️ Tech Stack
-* **Language:** Python 3.12
-* **AI/ML:** Google Gemini API (2.0 Flash-Lite & 1.5 Flash)
+## Tech Stack
+* **Language:** Python 3.14
+* **AI/LLM:** Google Gemini API (2.0 Flash-Lite)
 * **Database:** SQLite3
-* **Frontend:** Streamlit
-* **Data Processing:** Pandas
+* **Data Analysis:** Pandas
+* **Frontend:** Streamlit, Custom CSS3
 
-## 🧩 Technical Challenges & Solutions
-### Handling API Rate Limits
-One of the core engineering challenges was managing the throughput of the Free Tier Gemini API.
-* **Problem:** The API limits requests per minute, causing `429 Resource Exhausted` errors during bulk database population.
-* **Solution:** Implemented an **exponential backoff algorithm** in the generator script. If a limit is hit, the system pauses dynamically, retries with a safe delay, and utilizes a "fallback" strategy to ensure database integrity is never compromised.
+## Handling API Rate Limits
+One of the primary challenges was managing brawler descriptions for 400+ unique map/mode combinations within API rate limits.
+- Developed a fault-tolerant script to handle `429 Resource Exhausted` errors.
+- Implemented a professional fallback strategy that fills the database with sample descriptions when the LLM is unavailable.
 
-## 📦 Installation & Setup
-1. **Clone the repository:**
+## Installation & Setup
+1. Clone the repository.
+2. Install dependencies:
+   
    ```bash
-   git clone [https://github.com/yourusername/Brawl-Draft-Guide.git](https://github.com/yourusername/Brawl-Draft-Guide.git)
+   pip install - requirements.txt
+4. Run the script:
+   
+   ```bash
+   streamlit run app.py
