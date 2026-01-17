@@ -1,4 +1,6 @@
 streamlit
+python-dotenv
 requests
 pandas
 google-genai
+SQLAlchemy
