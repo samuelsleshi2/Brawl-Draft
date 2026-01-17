@@ -132,6 +132,7 @@ with tab1:
             1. Enter your mode
             2. Enter your map
             3. Click on your pick
+            
             You will then be recommended 5-10 brawlers to play.
         ''')
 
